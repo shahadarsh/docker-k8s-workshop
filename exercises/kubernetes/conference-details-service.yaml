@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: ad-service
+  name: conference-details-service
 spec:
   template:
     metadata:
       labels:
-        app: ad-service
+        app: conference-details-service
     spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: us.gcr.io/adarsh-shah-playground/ad-service:latest
+        image: us.gcr.io/adarsh-shah-playground/conference-details-service:latest
         ports:
         - containerPort: 9555
         env:
@@ -38,11 +38,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ad-service
+  name: conference-details-service
 spec:
   type: ClusterIP
   selector:
-    app: ad-service
+    app: conference-details-service
   ports:
   - name: grpc
     port: 9555

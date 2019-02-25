@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: product-catalog-service
+  name: schedule-service
 spec:
   template:
     metadata:
       labels:
-        app: product-catalog-service
+        app: schedule-service
     spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: product-catalog-service
+        image: schedule-service
         ports:
         - containerPort: 3550
         readinessProbe:
@@ -31,11 +31,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: product-catalog-service
+  name: schedule-service
 spec:
   type: ClusterIP
   selector:
-    app: product-catalog-service
+    app: schedule-service
   ports:
   - name: grpc
     port: 3550

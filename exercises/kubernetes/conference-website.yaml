@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: frontend
+  name: conference-website
 spec:
   template:
     metadata:
       labels:
-        app: frontend
+        app: conference-website
     spec:
       containers:
         - name: server
-          image: us.gcr.io/adarsh-shah-playground/frontend:latest
+          image: us.gcr.io/adarsh-shah-playground/conference-website:latest
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -30,10 +30,10 @@ spec:
               - name: "Cookie"
                 value: "shop_session-id=x-liveness-probe"
           env:
-          - name: PRODUCT_CATALOG_SERVICE_ADDR
-            value: "product-catalog-service:3550"
-          - name: AD_SERVICE_ADDR
-            value: "ad-service:9555"
+          - name: CONFERENCE_DETAILS_SERVICE_ADDR 
+            value: "conference-details-service:9555"
+          - name: SCHEDULE_SERVICE_ADDR
+            value: "schedule-service:3550"
           resources:
             requests:
               cpu: 100m
@@ -45,11 +45,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: conference-website
 spec:
   type: ClusterIP
   selector:
-    app: frontend
+    app: conference-website
   ports:
   - name: http
     port: 80
@@ -58,11 +58,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-external
+  name: conference-website-external
 spec:
   type: LoadBalancer
   selector:
-    app: frontend
+    app: conference-website
   ports:
   - name: http
     port: 80

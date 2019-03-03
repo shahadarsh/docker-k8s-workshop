@@ -14,16 +14,17 @@ var (
 )
 
 func (cw *conferenceWebsiteServer) homeHandler(w http.ResponseWriter, r *http.Request) {
-    var confDetailsSvcAddr, scheduleSvcAddr, schedule string
+    var confDetailsSvcAddr, scheduleSvcAddr, confDetails, schedule string
 
     mustMapEnv(&confDetailsSvcAddr, "CONFERENCE_DETAILS_SERVICE_ADDR")
     mustMapEnv(&scheduleSvcAddr, "SCHEDULE_SERVICE_ADDR")
   
+    getRestData(&confDetails, "http://" + confDetailsSvcAddr + "/conference-details")
     getRestData(&schedule, "http://" + scheduleSvcAddr + "/schedule")
     
     templates.ExecuteTemplate(w, "home", map[string]interface{}{
-	"conference_name":   "DevNexus", 
-	"schedule":   string(schedule), 
+	"conference_name":   confDetails, 
+	"schedule":   schedule, 
     });
 }
 

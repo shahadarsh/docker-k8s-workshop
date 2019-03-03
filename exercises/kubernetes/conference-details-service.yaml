@@ -12,38 +12,26 @@ spec:
       containers:
       - name: server
         image: us.gcr.io/adarsh-shah-playground/conference-details-service:latest
+        imagePullPolicy: "Always"
         ports:
-        - containerPort: 9555
-        env:
-        - name: PORT
-          value: "9555"
+        - containerPort: 8080 
         resources:
           requests:
-            cpu: 200m
-            memory: 180Mi
+            cpu: 100m
+            memory: 64Mi
           limits:
-            cpu: 300m
-            memory: 300Mi
-        readinessProbe:
-          initialDelaySeconds: 20
-          periodSeconds: 15
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:9555"]
-        livenessProbe:
-          initialDelaySeconds: 20
-          periodSeconds: 15
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:9555"]
+            cpu: 200m
+            memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: conference-details-service
+  name: conference-details-service 
 spec:
   type: ClusterIP
   selector:
-    app: conference-details-service
+    app: conference-details-service 
   ports:
-  - name: grpc
-    port: 9555
-    targetPort: 9555
+  - name: http
+    port: 80
+    targetPort: 8080

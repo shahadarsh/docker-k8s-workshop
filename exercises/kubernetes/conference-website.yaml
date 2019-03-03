@@ -11,11 +11,12 @@ spec:
       containers:
         - name: server
           image: us.gcr.io/adarsh-shah-playground/conference-website:latest
+          imagePullPolicy: "Always"
           ports:
           - containerPort: 8080
           env:
           - name: CONFERENCE_DETAILS_SERVICE_ADDR 
-            value: "conference-details-service:9555"
+            value: "conference-details-service:80"
           - name: SCHEDULE_SERVICE_ADDR
             value: "schedule-service:80"
           resources:

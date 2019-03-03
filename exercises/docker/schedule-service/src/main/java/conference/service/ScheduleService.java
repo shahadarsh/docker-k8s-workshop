@@ -22,6 +22,6 @@ public class ScheduleService {
 
 	@GET
 	public Response getHelloWorlds() {
-		return Response.ok("New schedule details go here").build();
+		return Response.ok("Schedule details go here").build();
 	}
 }

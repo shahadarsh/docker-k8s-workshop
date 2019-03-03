@@ -11,15 +11,9 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: schedule-service
+        image: us.gcr.io/adarsh-shah-playground/schedule-service:latest
         ports:
-        - containerPort: 3550
-        readinessProbe:
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:3550"]
-        livenessProbe:
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:3550"]
+        - containerPort: 8080 
         resources:
           requests:
             cpu: 100m
@@ -31,12 +25,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: schedule-service
+  name: schedule-service 
 spec:
   type: ClusterIP
   selector:
-    app: schedule-service
+    app: schedule-service 
   ports:
-  - name: grpc
-    port: 3550
-    targetPort: 3550
+  - name: http
+    port: 80
+    targetPort: 8080

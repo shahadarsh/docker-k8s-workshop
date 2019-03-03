@@ -14,5 +14,5 @@ RUN ["mvn", "dependency:go-offline"]
 ADD ["src", "/work/src"]
 RUN ["mvn", "package"]
 
-EXPOSE 8080
+EXPOSE 8080 
 ENTRYPOINT ["java", "-cp", "target/classes:target/dependency/*", "com.kumuluz.ee.EeApplication"]

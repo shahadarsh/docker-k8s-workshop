@@ -13,27 +13,11 @@ spec:
           image: us.gcr.io/adarsh-shah-playground/conference-website:latest
           ports:
           - containerPort: 8080
-          readinessProbe:
-            initialDelaySeconds: 10
-            httpGet:
-              path: "/_healthz"
-              port: 8080
-              httpHeaders:
-              - name: "Cookie"
-                value: "shop_session-id=x-readiness-probe"
-          livenessProbe:
-            initialDelaySeconds: 10
-            httpGet:
-              path: "/_healthz"
-              port: 8080
-              httpHeaders:
-              - name: "Cookie"
-                value: "shop_session-id=x-liveness-probe"
           env:
           - name: CONFERENCE_DETAILS_SERVICE_ADDR 
             value: "conference-details-service:9555"
           - name: SCHEDULE_SERVICE_ADDR
-            value: "schedule-service:3550"
+            value: "schedule-service:80"
           resources:
             requests:
               cpu: 100m

@@ -10,7 +10,7 @@ gcloud container clusters create k8s-workshop  --enable-autoupgrade --enable-aut
 ## Build microservice docker images & push them to registry 
 
 ```bash
-REGISTRY_PREFIX="us.gcr.io/adarsh-shah-playground"
+REGISTRY_PREFIX="us.gcr.io/devnexus-k8s-workshop"
 ```
 
 ```bash

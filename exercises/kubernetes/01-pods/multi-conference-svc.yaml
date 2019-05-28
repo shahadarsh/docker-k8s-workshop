@@ -1,12 +1,12 @@
 apiVersion: v1 
 kind: Pod 
 metadata:
-  name: conference-details-service
+  name: multi-conference-svc
 spec:
   terminationGracePeriodSeconds: 5
   containers:
   - name: server
-    image: conference-details-service:latest
+    image: shahadarsh/conference-details-service:latest
     imagePullPolicy: "Always"
     ports:
     - containerPort: 8080 

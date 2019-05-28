@@ -12,6 +12,8 @@ Verify the state of the pod
 
 ```bash
 kubectl get pods 
+```
+```bash
 NAME                              READY     STATUS    RESTARTS   AGE
 single-conference-svc             1/1       Running   0          69s
 ```
@@ -59,6 +61,7 @@ curl http://localhost:8080/conference-details
 
 ```bash
 kubectl delete -f single-conference-svc.yaml
-
+```
+```bash
 kubectl delete -f multi-conference-svc.yaml
 ```

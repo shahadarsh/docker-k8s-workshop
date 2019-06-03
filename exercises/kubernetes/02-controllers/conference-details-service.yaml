@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: conference-details-service
 spec:
+  replicas: 5 
   template:
     metadata:
       labels:

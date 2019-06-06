@@ -1,19 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: conference-details-service
+  name: schedule-svc
 spec:
-  replicas: 5 
   template:
     metadata:
       labels:
-        app: conference-details-service
+        app: schedule-svc
     spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: us.gcr.io/adarsh-shah-playground/conference-details-service:latest
-        imagePullPolicy: "Always"
+        image: shahadarsh/schedule-svc:1.0
         ports:
         - containerPort: 8080 
         resources:
@@ -27,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: conference-details-service 
+  name: schedule-svc 
 spec:
   type: ClusterIP
   selector:
-    app: conference-details-service 
+    app: schedule-svc 
   ports:
   - name: http
     port: 80

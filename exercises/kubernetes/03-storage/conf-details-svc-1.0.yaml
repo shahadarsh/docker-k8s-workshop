@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: conf-details-pv-svc
+spec:
+  replicas: 2 
+  template:
+    metadata:
+      labels:
+        app: conf-details-pv-svc
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: server
+        image: shahadarsh/conf-details-svc:1.0
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: conf-details-persistent-storage
+          mountPath: /var/lib/mysql
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
+      volumes:
+      - name: conf-details-persistent-storage
+        persistentVolumeClaim:
+          claimName: conf-details-pv-claim
+

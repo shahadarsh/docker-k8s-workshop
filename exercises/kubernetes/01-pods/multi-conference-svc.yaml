@@ -1,19 +1,23 @@
-apiVersion: v1 
-kind: Pod 
+apiVersion: v1
+kind: Pod
 metadata:
-  name: multi-conference-svc
+  name: multi-pod
 spec:
-  terminationGracePeriodSeconds: 5
+  volumes:
+  - name: shared-logs
+    emptyDir: {}
   containers:
-  - name: server
-    image: shahadarsh/conference-details-service:latest
-    imagePullPolicy: "Always"
+  - name: app-container
+    image: alpine
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do date >> /var/log/date.log; sleep 5;done"]
+    volumeMounts:
+    - name: shared-logs
+      mountPath: /var/log
+  - name: log-container
+    image: nginx:1.7.9
     ports:
-    - containerPort: 8080 
-    resources:
-      requests:
-        cpu: 100m
-        memory: 64Mi
-      limits:
-        cpu: 200m
-        memory: 128Mi
+      - containerPort: 80
+    volumeMounts:
+    - name: shared-logs
+      mountPath: /usr/share/nginx/html

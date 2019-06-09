@@ -43,18 +43,14 @@ kubectl logs -f single-conference-svc
 kubectl apply -f multi-conference-svc.yaml
 ```
 
-Get details of the pod
+Accessing your pod
+
 ```bash
-kubectl describe pod multi-conference-svc
+kubectl port-forward multi-pod 8080:80
 ```
 
-Making pod accessible
-```bash
-kubectl port-forward multi-conference-svc 8080:8080
 ```
-Navigate
-```bash
-curl http://localhost:8080/conference-details
+curl http://localhost:8080/date.log
 ```
 
 ### Cleanup

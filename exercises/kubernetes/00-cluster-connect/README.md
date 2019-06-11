@@ -8,7 +8,7 @@ gcloud auth login
 ### Create cluster if not done already
 
 ```
-gcloud container clusters create <cluster-name> --region <region>
+gcloud container clusters create k8s-workshop  --enable-autoupgrade --enable-autoscaling --min-nodes=2 --max-nodes=3 --num-nodes=2 --zone=us-east1-b
 ```
 
 ### Configure SDK ###

@@ -3,9 +3,8 @@ apiVersion: v1
 metadata:
   name: conf-details-pv-claim
 spec:
-  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 500Mi

@@ -1,24 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: conference-website
+  name: conf-website
 spec:
   template:
     metadata:
       labels:
-        app: conference-website
+        app: conf-website
     spec:
       containers:
         - name: server
-          image: us.gcr.io/adarsh-shah-playground/conference-website:latest
+          image: shahadarsh/conf-website:1.0
           imagePullPolicy: "Always"
           ports:
           - containerPort: 8080
           env:
           - name: CONFERENCE_DETAILS_SERVICE_ADDR 
-            value: "conference-details-service:80"
+            value: "conf-details-svc:80"
           - name: SCHEDULE_SERVICE_ADDR
-            value: "schedule-service:80"
+            value: "schedule-svc:80"
           resources:
             requests:
               cpu: 100m
@@ -30,11 +30,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: conference-website
+  name: conf-website
 spec:
   type: ClusterIP
   selector:
-    app: conference-website
+    app: conf-website
   ports:
   - name: http
     port: 80
@@ -43,11 +43,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: conference-website-external
+  name: conf-website-external
 spec:
   type: LoadBalancer
   selector:
-    app: conference-website
+    app: conf-website
   ports:
   - name: http
     port: 80

@@ -20,6 +20,10 @@ public class ConferenceDetailsService {
 
 	@GET
 	public Response getConferenceDetails() {
-		return Response.ok("Conference Name").build();
+            String confName = System.getenv("CONFERENCE_NAME");
+            if (confName != null) {
+                return Response.ok(confName).build();
+            }
+	    return Response.ok("Conference Name").build();
 	}
 }

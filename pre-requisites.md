@@ -13,7 +13,7 @@ Install following:
 
 There are various options for running k8s cluster that can be used with this workshop:
 
-## Option 1: Using GKE:
+## Option 1: Using GKE (Recommended)
 1. Follow steps here: https://cloud.google.com/run/docs/gke/setup
 2. Google Cloud SDK: https://cloud.google.com/sdk/install
 

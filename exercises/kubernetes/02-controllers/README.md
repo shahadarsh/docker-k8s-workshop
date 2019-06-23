@@ -1,4 +1,4 @@
-# Pods
+# Controllers 
 Official docs: https://kubernetes.io/docs/concepts/workloads/controllers/ 
 
 Controllers make sure that the desired state of the cluster matches the actual state. 

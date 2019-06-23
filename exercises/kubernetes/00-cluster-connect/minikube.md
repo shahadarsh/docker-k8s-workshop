@@ -1,7 +1,7 @@
 # Start minikube
 
 ```
-minikube start
+minikube start -p docker-k8s-workshop
 ```
 
 ### Confirm Cluster Connectivity ###

@@ -1,15 +1,19 @@
 # Pre-requisites
 
-Introduction to Kubernetes workshop consists of hands-on exercises. In order to be prepared for that please follow below instructions prior to arriving. You can email me on shahadarsh@gmail.com if you have any questions. 
+Introduction to Kubernetes workshop consists of hands-on exercises. In order to be prepared for that please follow below instructions prior to arriving. You can email me on adarsh@ShahAdarsh.com if you have any questions. 
 
 Install following:
-1. kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
-2. Docker:
-    Mac: https://docs.docker.com/docker-for-mac/install/
-    Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/
-    Centos: https://docs.docker.com/install/linux/docker-ce/centos/
-    Windows: https://docs.docker.com/docker-for-windows/install/
-3. Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+1. **kubectl:** https://kubernetes.io/docs/tasks/tools/install-kubectl/
+2. **Docker:**
+    
+    **Mac:** https://docs.docker.com/docker-for-mac/install/
+    
+    **Ubuntu:** https://docs.docker.com/install/linux/docker-ce/ubuntu/
+    
+    **Centos:** https://docs.docker.com/install/linux/docker-ce/centos/
+    
+    **Windows:** https://docs.docker.com/docker-for-windows/install/
+3. **Git:** https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 There are various options for running k8s cluster that can be used with this workshop:
 

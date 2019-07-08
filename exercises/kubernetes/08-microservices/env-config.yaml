@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: conf-details-config-map 
+  labels:
+    name: conf-details-config-map   
+data:
+  CONFERENCE_NAME: devnexus 
+---

@@ -23,7 +23,10 @@ There are various options for running k8s cluster that can be used with this wor
 
 Note: Charges will be incurred if you use this option
 
-## Option 2: Minikube 
+## Option 2: Using EKS
+1. https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
+
+## Option 3: Using Minikube
 1. https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 Note: This will only create single node cluster so you won't be able to try out few of the features like scaling during hands-on exercises.

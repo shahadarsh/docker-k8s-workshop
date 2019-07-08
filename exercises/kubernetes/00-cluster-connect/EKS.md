@@ -1,6 +1,6 @@
 ### Create cluster if not done already
 
-# Note: This step will take time. Close to ~20 mins
+#### Note: This step will take time. Close to ~20 mins
 
 ```
 eksctl create cluster \

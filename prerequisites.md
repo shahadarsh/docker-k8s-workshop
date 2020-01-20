@@ -25,11 +25,16 @@ There are various options for running k8s cluster that can be used with this wor
 #### Note: Charges will be incurred if you use option 1 or 2.
 
 ### Option 1: Using GKE (Recommended)
-1. Follow steps here: https://cloud.google.com/run/docs/gke/setup
-2. Google Cloud SDK: https://cloud.google.com/sdk/install
+
+* Setup GCP account (if you don't have one): https://console.cloud.google.com/getting-started
+    * You might get a free $300 credit depending on the region
+* GKE setup: https://cloud.google.com/run/docs/gke/setup
+* Google Cloud SDK: https://cloud.google.com/sdk/install
 
 ### Option 2: Using EKS
-https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
+
+* Setup AWs account (if you don't have one): https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
+* Setup eksctl: https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
 
 ### Option 3: Using Minikube
 https://kubernetes.io/docs/tasks/tools/install-minikube/

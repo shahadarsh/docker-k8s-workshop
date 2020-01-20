@@ -22,7 +22,7 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 There are various options for running k8s cluster that can be used with this workshop:
 
-Note: Charges will be incurred if you use option 1 or 2.
+#### ** Note: ** Charges will be incurred if you use option 1 or 2.
 
 ### Option 1: Using GKE (Recommended)
 1. Follow steps here: https://cloud.google.com/run/docs/gke/setup
@@ -30,8 +30,6 @@ Note: Charges will be incurred if you use option 1 or 2.
 
 ### Option 2: Using EKS
 https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
-
-**Note:** Charges will be incurred if you use this option
 
 ### Option 3: Using Minikube
 https://kubernetes.io/docs/tasks/tools/install-minikube/

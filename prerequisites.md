@@ -42,6 +42,6 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 * If you have a MiFi device bring it with you in-case venue WiFi has issues
 * Its recommended to have Admin rights to your laptop in case we need to install something else to try out
 * Few additional things that are helpful but not needed: 
-1. k9s: https://github.com/derailed/k9s
-2. kubectx: https://github.com/ahmetb/kubectx
+    * k9s: https://github.com/derailed/k9s
+    *  kubectx: https://github.com/ahmetb/kubectx
 

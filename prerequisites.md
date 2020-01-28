@@ -5,18 +5,17 @@ Introduction to Kubernetes & Advanced Kubernetes workshop consists of hands-on e
 Install following in advance but it will also be good to have admin rights to your laptop in case we need to install something else. 
 
 ## kubectl 
-Follow instructions here: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+Follow instructions [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 ## Docker
 
-* Mac: https://docs.docker.com/docker-for-mac/install/
-* Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/  
-* Centos: https://docs.docker.com/install/linux/docker-ce/cens/  
-* Windows: https://docs.docker.com/docker-for-windows/install/
+* [Mac](https://docs.docker.com/docker-for-mac/install/)
+* [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)  
+* [Centos](https://docs.docker.com/install/linux/docker-ce/cens/)
+* [Windows](https://docs.docker.com/docker-for-windows/install/)
 
 ## Git 
-
-https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+Follow instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Kubernetes Cluster
 
@@ -26,20 +25,32 @@ There are various options for running k8s cluster that can be used with this wor
 
 ### Option 1: Using GKE (Recommended)
 
-* Setup GCP account (if you don't have one): https://console.cloud.google.com/getting-started
+* Setup GCP account (if you don't have one): Instructions [here](https://console.cloud.google.com/getting-started)
     * You might get a free $300 credit depending on the region
-* GKE setup: https://cloud.google.com/run/docs/gke/setup
-* Google Cloud SDK: https://cloud.google.com/sdk/install
+* [GKE](https://cloud.google.com/run/docs/gke/setup)
+* [Google Cloud SDK](https://cloud.google.com/sdk/install)
 
 ### Option 2: Using EKS
 
-* Setup AWs account (if you don't have one): https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
-* Setup eksctl: https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
+* Setup AWS account (if you don't have one): Instructions [here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+* Setup [eksctl](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
 
 ### Option 3: Using Minikube
-https://kubernetes.io/docs/tasks/tools/install-minikube/
+
+Follow instructions [here](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
 **Note:** This will only create single node cluster so you won't be able to try out few of the features like scaling during hands-on exercises.
+
+## Clone repo and verify setup
+Clone repo
+```bash
+git@github.com:shahadarsh/docker-k8s-workshop.git
+```
+Create cluster and connect to it:
+https://github.com/shahadarsh/docker-k8s-workshop/tree/master/exercises/kubernetes/00-cluster-connect
+
+Cleanup after to avoid charges(we will recreate the cluster the day off workshop): 
+https://github.com/shahadarsh/docker-k8s-workshop/tree/master/exercises/kubernetes/999-cleanup
 
 ## Other aspects 
 * If you have a MiFi device bring it with you in-case venue WiFi has issues

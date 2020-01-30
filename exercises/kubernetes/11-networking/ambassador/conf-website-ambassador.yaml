@@ -1,0 +1,9 @@
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: conf-website-backend 
+  namespace: ambassador
+spec:
+  prefix: /website/
+  service: conf-website 

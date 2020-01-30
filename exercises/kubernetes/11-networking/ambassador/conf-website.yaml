@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: conf-website
+  namespace: ambassador
+spec:
+  template:
+    metadata:
+      labels:
+        app: conf-website
+    spec:
+      containers:
+        - name: server
+          image: shahadarsh/conf-website:1.0
+          imagePullPolicy: "Always"
+          ports:
+          - containerPort: 8080
+          env:
+          - name: CONFERENCE_DETAILS_SERVICE_ADDR 
+            value: "conf-details-svc:80"
+          - name: SCHEDULE_SERVICE_ADDR
+            value: "schedule-svc:80"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+---              
+apiVersion: v1
+kind: Service
+metadata:
+  name: conf-website 
+  namespace: ambassador
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+  selector:
+    app: conf-website

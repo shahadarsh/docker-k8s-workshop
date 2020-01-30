@@ -3,6 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: conf-details-svc 
+  namespace: ambassador
 spec:
   type: ClusterIP
   selector:

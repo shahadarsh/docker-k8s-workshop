@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conf-details-svc
+  labels:
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: conf-details-svc 
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: conf-details-svc
+        version: v1
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: server
+        image: shahadarsh/conf-details-svc:1.0
+        imagePullPolicy: "Always"

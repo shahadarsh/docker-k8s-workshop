@@ -8,7 +8,7 @@
 helm create "app"
 ```
 
-Change docker image in app/values.yaml
+Change docker image in app/values.yaml to "shahadarsh/conf-details-svc"
 
 ```bash
 helm install conf-details-svc app 

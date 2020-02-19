@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: conf-details-svc 
+  labels:
+    app: conf-details-app
+    release: prom
+spec:
+  namespaceSelector:
+    any: true
+  selector:
+    matchLabels:
+      app: conf-details-app
+  endpoints:
+  - port: web
+    interval: 10s

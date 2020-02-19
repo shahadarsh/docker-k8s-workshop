@@ -19,3 +19,5 @@ Change service/type from ClusterIP to LoadBalancer
 ```bash
 curl [lb-url]
 ```
+
+It fails? Remove the readiness and liveliness probe

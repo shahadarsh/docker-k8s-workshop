@@ -5,5 +5,5 @@ metadata:
   labels:
     name: conf-details-config-map   
 data:
-  CONFERENCE_NAME: devnexus 
+  CONFERENCE_NAME: DEVNEXUS 
 ---

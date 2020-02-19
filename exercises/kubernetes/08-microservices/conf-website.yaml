@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: conf-website
 spec:
+  replicas: 3
   template:
     metadata:
       labels:

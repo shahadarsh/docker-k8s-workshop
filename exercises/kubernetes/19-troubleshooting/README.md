@@ -27,3 +27,5 @@ kubectl get events --field-selector type=Warning
 # events related to Nodes
 kubectl get events --field-selector involvedObject.kind=Node
 ```
+
+Show kubectx & k9s features

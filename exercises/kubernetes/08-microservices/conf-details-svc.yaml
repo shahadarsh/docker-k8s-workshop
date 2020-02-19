@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: conf-details-svc
 spec:
-  replicas: 5 
+  replicas: 3
   template:
     metadata:
       labels:
@@ -23,6 +23,12 @@ spec:
           limits:
             cpu: 200m
             memory: 128Mi
+        env:
+        - name: CONFERENCE_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: conf-details-config-map 
+              key: CONFERENCE_NAME 
 ---
 apiVersion: v1
 kind: Service

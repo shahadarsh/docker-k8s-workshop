@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: schedule-svc
 spec:
+  replicas: 3
   template:
     metadata:
       labels:
